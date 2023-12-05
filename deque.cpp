@@ -71,8 +71,6 @@ void deque::push_front(int data){
     int numElements = 0;
     numElements = numElements + 1;
     //resize
-    //figure out how to get this statement to work
-    std::cout << "here8" << std:: endl;
     std::cout << "rows - 1: " << rows -1 << std::endl;
     if(numElements == blockSize){
       for(int i = rows - 1; i > 0; i--){
@@ -87,13 +85,10 @@ void deque::push_front(int data){
     }
     
     int ** arr2;
-    std::cout << "here9" << std::endl;
     arr2 = new int* [rows + 1];
-    std::cout << "here10" << std::endl;
     for(int i = 0; i < rows; i++){
       arr2[i] = new int[blockSize];
     }
-    std::cout << "here11" << std::endl;
     for(int i = 0; i < rows; i++){
       for(int j = 0; j < blockSize; j++){
 	if(i == current){
@@ -104,7 +99,6 @@ void deque::push_front(int data){
 	
       }
     }
-    std::cout << "here12" << std::endl;
     arr2[0][0] = data;
 
     std::cout << "replacing array..." << std::endl;
@@ -180,27 +174,21 @@ void deque::push_back(int data){
     std::cout <<"back: " << array[rows - 1][blockSize - 1] << std::endl;
   }else{
     int newRow = rows + 1;
-    std::cout << "Here?" << std::endl;
     int **arr2 = new int*[rows + 1];
-    std::cout << "Here2?" << std::endl;
     for(int i = 0; i < newRow; i++){
       arr2[i] = new int[blockSize];
     }
-    std::cout << "here3?" << std::endl;
+    //std::cout << "here3?" << std::endl;
     for(int i = 0; i < rows; i++){
       for(int j = 0; j < blockSize; j++){
 	//copying contents from first array
 	arr2[i][j] = array[i][j];
       }
     }
-    std::cout << "here4?" << std::endl;
     int count = rows + 1;
     std::cout << count << std::endl;
-    std::cout << "here5?" << std::endl;
     arr2[count - 1][blockSize - 1] = data;
-    std::cout << "here6?" << std::endl;
     rows = rows + 1;
-    std::cout << "here7?" << std::endl;
     array = arr2;
     std::cout << "push back done..." << std::endl;
   }
@@ -226,8 +214,6 @@ void deque::pop_back(){
     for(int i = 0; i < rows; i++){
       for(int j = 0; j < blockSize - 1; j++){
 	newarr[i][j] = array[i][j];
-	//std::cout << "original array: " << array[i][j] << std::endl;
-	//std::cout << "new array: " << newarr[i][j] << std::endl;
       }
       array = newarr;
     }
@@ -333,6 +319,6 @@ void deque::print(){
  * @post the data at the specified position has been returned
  * 
  */
-int& deque::operator [](int index){//AHHHHHHHHHHHHHH!!!
+int& deque::operator [](int index){
   return array[index][index];
 }
