@@ -1,1 +1,6 @@
 # Deque-Toolkit
+
+Name: Jason Moss
+Date: 12-4-23
+
+This Deque program was made to create a deck using a linked list. The functions implemented are the constructor, deconstructor, push_front, push_back, pop_front, pop_back, empty, size, print, front, back, and a oveload operator []. When you push data into the deque for the first time, you will be prompted to enter the blocksize, number of rows, and number of collumns. Once you have entered the information, the array will be created. The data that you wish to insert will then be inserted. If you wish to see what is at the front or back of the deque, use the front or back function. On the file main.cpp, I have hadded some tests in order to show that the deque can work. I have added for loops that push to back and front several hundred times. I also show the print function, the front function, the back function, and the size function. When using the push back function with an array with data inside of it multiple times, the function will creta a new block of size blockSize. The data then will be inserted at the end of that block at blockSize - 1. The empty function will check if the array is equal to NULL or not. It will then return true or false depending on that.
